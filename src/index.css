@@ -1,0 +1,71 @@
+.ant-layout{
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+  .background-yellow{
+    background-color: #ffd333;
+  }
+  .min-h-100{
+    min-height: 100vh;
+  }
+  main{
+    background-color: transparent !important;
+    overflow-y: scroll;
+    
+  }
+  main::-webkit-scrollbar{
+    width: 0px;
+  }
+  .ant-layout-sider{
+     flex: 0 0 250px !important;
+     max-width: 250px !important;
+     min-width: 250px !important;
+     width: 250px !important;
+  }
+  .ant-layout-sider-collapsed{
+     flex: 0 0 80px !important;
+     max-width: 80px !important;
+     min-width: 80px !important;
+     width:80px !important;
+  }
+  .demo-logo-vertical{
+    background-color: #ffd333;
+    margin: 0;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  .demo-logo-vertical .lg-logo{
+    display: none;
+  }
+  .ant-layout-sider-collapsed .logo{
+    display: none;
+  }
+  .ant-layout-sider-collapsed .lg-logo{
+    display: block;
+  }
+  .ant-menu-title-content{
+    font-size: 16px;
+  }
+  .ant-layout-header h5{
+    margin-bottom: 0;
+    padding: 0;
+    letter-spacing: 0.3px;
+    line-height:20px;
+    font-size: 16px;
+  }
+  .ant-layout-header p{
+    margin-bottom: 0;
+    padding: 0;
+    letter-spacing: 0.3px;
+    line-height:20px;
+    font-size: 15px;
+  }
+  .ant-layout-header div .badge{
+    top: 16px;
+    right: -6px;
+  }
+  
+  
