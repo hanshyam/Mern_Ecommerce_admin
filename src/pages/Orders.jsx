@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Table } from "antd";
+import { useDispatch, useSelector } from 'react-redux';
+import { getOrders } from '../features/order/orderSlice';
 
 const columns = [
   {
@@ -29,6 +31,12 @@ for (let i = 1; i <= 40; i++) {
   });
 }
 const Orders = () => {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+      dispatch(getOrders());
+  },[])
+  const orderState =  useSelector((state)=>state.order.orders);
+  console.log(orderState);
   return (
     <div>
         <h3 className="mb-4 title">Orders</h3>

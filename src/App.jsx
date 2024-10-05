@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route,Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route,Routes } from 'react-router-dom'
 import Login from './pages/Login'
 import ForgetPassword from './pages/ForgetPassword'
 import ResetPassword from './pages/ResetPassword'
@@ -24,6 +24,7 @@ import AddProduct from './pages/AddProduct'
 const App = () => {
   return (
     <>
+     <Router>
       <Routes>
          <Route path='/' element={<Login/>}/>
          <Route path='/forget-password' element={<ForgetPassword/>}/>
@@ -48,6 +49,7 @@ const App = () => {
            <Route path='product' element={<AddProduct/>}/>
          </Route>  
       </Routes>
+      </Router>
     </>
   )
 }

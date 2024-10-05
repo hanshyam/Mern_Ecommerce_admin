@@ -67,5 +67,9 @@
     top: 16px;
     right: -6px;
   }
-  
+  .error{
+    color: red;
+    font-size: 12px;
+    margin-top:3px;
+  }
   

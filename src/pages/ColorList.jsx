@@ -1,5 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Table } from "antd";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import {Link} from "react-router-dom"
+import { getColors } from '../features/color/colorSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const columns = [
   {
@@ -11,24 +16,32 @@ const columns = [
     dataIndex: "name",
   },
   {
-    title: "Product",
-    dataIndex: "product",
-  },
-  {
-    title: "Status",
-    dataIndex: "status",
+    title: "Action",
+    dataIndex: "action",
   },
 ];
+
+const ColorList = () => {
+const dispatch = useDispatch();
+useEffect(()=>{
+   dispatch(getColors());
+},[])
+const colorState = useSelector((state)=>state.color.colors);
+
 const data1 = [];
-for (let i = 1; i <= 40; i++) {
+for (let i = 0; i <colorState.length; i++) {
   data1.push({
-    key: i,
-    name: `Edward King ${i}`,
-    product: 32,
-    status: `London, Park Lane no. ${i}`,
+    key: i+1,
+    name: colorState[i].title,
+    action:(<div><Link style={{fontSize:"20px"}}>
+      <FaEdit/>
+    </Link>
+    <Link  style={{fontSize:"20px"}} className='ms-3 text-danger'>
+      <MdDelete/>
+    </Link></div>),
   });
 }
-const ColorList = () => {
+
   return (
     <div>
         <h3 className="mb-4 title">Colors List</h3>
